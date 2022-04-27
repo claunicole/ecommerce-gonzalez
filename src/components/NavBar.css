@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #282c34;
+}
+
+.logo {
+    height: 15vmin;
+    margin-left: 35px;
+}
+
+ .nav-container {
+    display: flex;
+    list-style: none; 
+ }
+
+ .nav-container li {
+     margin: 0 30px;
+ }
+
+
+.nav-container li a {
+    text-decoration: none;
+    color: white;
+}
+
