@@ -6,17 +6,22 @@
 }
 
 .logo {
+    position: relative;
     height: 15vmin;
-    margin-left: 35px;
+    left: 60px;
+
 }
 
  .nav-container {
     display: flex;
-    list-style: none; 
+    position: relative;
+    list-style: none;
+    right: 35px;
+    
  }
 
  .nav-container li {
-     margin: 0 30px;
+     padding: 30px;
  }
 
 
