@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ecommerce-gonzalez/static/css/main.63f16da4.css",
+    "main.js": "/ecommerce-gonzalez/static/js/main.49754f9b.js",
+    "static/js/787.07504eaa.chunk.js": "/ecommerce-gonzalez/static/js/787.07504eaa.chunk.js",
+    "static/media/logo.png": "/ecommerce-gonzalez/static/media/logo.0f9d87a53f776da5532e.png",
+    "index.html": "/ecommerce-gonzalez/index.html",
+    "main.63f16da4.css.map": "/ecommerce-gonzalez/static/css/main.63f16da4.css.map",
+    "main.49754f9b.js.map": "/ecommerce-gonzalez/static/js/main.49754f9b.js.map",
+    "787.07504eaa.chunk.js.map": "/ecommerce-gonzalez/static/js/787.07504eaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63f16da4.css",
+    "static/js/main.49754f9b.js"
+  ]
+}
