@@ -1,5 +1,5 @@
 
- function ItemListContainer({ greeting ='Hola soy el ItemListContainer' }) {
+ function ItemListContainer({ greeting }) {
     return (
         <div>
             <h1>{greeting}</h1> 
