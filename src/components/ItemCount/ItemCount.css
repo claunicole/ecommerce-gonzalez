@@ -38,6 +38,7 @@
     line-height: 20px;
     border-radius: 15px;
     border: none;
+    cursor: pointer;
     color: #fff;;
     background-color: #d3145a
   }

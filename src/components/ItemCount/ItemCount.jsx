@@ -8,11 +8,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
   };
 
   function addToCart() {
-    if (count > 1) {
-      alert(`Has agregado ${count} productos`);
-    } else {
-      alert(`Has agregado ${count} producto`);
-    }
+    onAdd(count);
   }
 
   return (
