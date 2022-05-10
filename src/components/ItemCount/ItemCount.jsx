@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ItemCount.css";
+
 export default function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
 
@@ -13,7 +14,6 @@ export default function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <div className="item-count-container">
-      <p>Cantidad </p>
       <div className="count-container">
         <button
           className="button-container"
