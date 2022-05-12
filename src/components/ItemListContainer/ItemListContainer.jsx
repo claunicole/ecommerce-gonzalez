@@ -19,9 +19,9 @@ import { Ring } from '@uiball/loaders'
   
     useEffect(() => {
       items
-        .then(resp => {setProductos(resp);
-        })
-        .finally(() => setLoading(false));
+        .then(resp => {setProductos(resp)})
+        .catch(err => {console.log(err)})
+        .finally(() => setLoading(false))
     }, []);
 
     return (
