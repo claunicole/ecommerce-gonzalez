@@ -7,7 +7,7 @@ import img6 from "../components/assets/strange_shirt.jpg"
 import img7 from "../components/assets/trixie_shirt.jpg"
 import img8 from "../components/assets/kylo_shirt.jpg"
 
-export const productos = [
+export const products = [
     { id: "1", name: "Polera Black Panther", description: "Polera Unisex Funko", price: "$14", pictureUrl:img1, stock:6},
     { id: "2", name: "Polera Green Goblin", description: "Polera Unisex Funko", price: "$14", pictureUrl:img2, stock:5 },
     { id: "3", name: "Polera Yondu", description: "Polera Unisex Funko", price: "$14", pictureUrl:img3, stock:4},

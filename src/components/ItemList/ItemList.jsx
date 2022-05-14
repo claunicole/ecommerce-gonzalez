@@ -2,10 +2,10 @@ import Item from "../Item/Item"
 import './ItemList.css'
 
 
-function ItemList({productos}) {
+function ItemList({products}) {
   return (
     <div className="item-list">
-        {productos.map(item => <Item key={item.id} name={item.name} description={item.description} price={item.price} img={item.pictureUrl} stock={item.stock}/>)}
+        {products.map(item => <Item id={item.id} name={item.name} description={item.description} price={item.price} img={item.pictureUrl} stock={item.stock}/>)}
     </div>
   )
 }

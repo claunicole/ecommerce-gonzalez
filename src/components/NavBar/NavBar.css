@@ -7,26 +7,40 @@
 
 .logo {
     position: relative;
-    height: 15vmin;
-    left: 60px;
-
+    height: 20vmin;
+    left: 20px;
 }
 
- .nav-container {
+.nav-container {
     display: flex;
     position: relative;
     list-style: none;
-    right: 35px;
-    
- }
+    right: 10px;
+}
 
- .nav-container li {
-     padding: 30px;
- }
-
+.nav-container li {
+    padding: 15px;
+}
 
 .nav-container li a {
     text-decoration: none;
     color: white;
 }
 
+@media (min-width: 650px) {
+
+.nav-container {
+    right: 25px;
+}     
+.nav-container li a {
+    font-size: 1.4rem;
+}}
+
+@media (min-width: 1024px) {
+.nav-container {
+    left: 300px;
+}  
+
+.nav-container li {
+    padding: 30px;
+}}

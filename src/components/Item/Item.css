@@ -3,17 +3,28 @@
 }
 
 .card {
-    width: 250px;
-    height: 420px;
+    width: 180px;
+    height: 270px;
     padding: 1em 2em;
     border: 2px solid grey;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 500;
     color: black;
     border-radius: 15px;
 }
 
 .card-image {
-    width: 253px;
-    height: 253px;
+    width: 130px;
+    height: 130px;
 }
+
+ @media (min-width: 1024px) {
+.card {
+     width: 250px;
+    height: 420px;
+}
+
+.card-image {
+width: 253px;
+height: 253px;
+}} 

@@ -1,0 +1,44 @@
+.detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    width: 250px;
+    height: 450px;
+    padding: 1em 2em;
+    border: 2px solid grey;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    border-radius: 15px;
+}
+
+.detail-img {
+    width: 240px;
+    height: 240px;
+}
+
+
+@media (min-width: 1024px) {
+    .detail {
+        display: flex;
+        justify-content: center;
+        width: 700px;
+        margin: 35px;
+        font-size: 1.8rem;
+    }
+
+    .detail-img {
+        width: 440px;
+        height: 440px;
+    }
+
+    .detail-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

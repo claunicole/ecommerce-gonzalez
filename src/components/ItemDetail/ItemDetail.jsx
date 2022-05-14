@@ -1,18 +1,18 @@
+import ItemCount from "../ItemCount/ItemCount"
+import './ItemDetail.css'
 
-function ItemDetail() {
+function ItemDetail({name, description, price, img, stock}) {
   return (
-    <>
-        <h2>Hola soy el Item Detail</h2>
-        <div>
-            <div>imagen</div>
-            <div>
-                <h2>nombre producto</h2>
-                <p>precio</p>
-                <p>stock disponible</p>
-                <p>boton de agregar al carrito</p>
+        <div className="detail-container">
+          <div className="detail">
+            <img src={img} alt="" className="detail-img"/>
+            <div className="detail-item">
+                <p>{name}</p>
+                <p>{price}</p>
+                <ItemCount stock={stock} initial={1} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
             </div>
+          </div>
         </div>
-    </>
   )
 }
 

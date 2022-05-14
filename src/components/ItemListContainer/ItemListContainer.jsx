@@ -1,12 +1,13 @@
 import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { productos } from "../../data/data";
-import { Ring } from '@uiball/loaders'
+import Loader from "../Loader/Loader";
+import { products } from "../../data/data";
+
 
   const items = new Promise((resolve) => {
     setTimeout(() => {
-      resolve(productos);
+      resolve(products);
     }, 2000);
   });
 
@@ -14,28 +15,22 @@ import { Ring } from '@uiball/loaders'
 
  function ItemListContainer({ greeting }) {
 
-    const [productos, setProductos] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
       items
-        .then(resp => {setProductos(resp)})
+        .then(resp => {setProducts(resp)})
         .catch(err => {console.log(err)})
         .finally(() => setLoading(false))
     }, []);
 
     return (
-        <div>
+        <>
             <h1>{greeting}</h1> 
-            {loading ? (<h2 className="loading">
-              <Ring 
-                size={40}
-                lineWeight={5}
-                speed={2} 
-                color="black" 
-              /></h2>) 
-              : (<ItemList productos={productos}/>)}
-        </div>
+            {loading ? <Loader/>
+            : (<ItemList products={products}/>)}
+        </>
     )
 }
   

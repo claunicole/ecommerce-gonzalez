@@ -2,3 +2,15 @@
     margin-right: 45px;
     cursor: pointer;
 }
+
+@media (min-width: 1024px){
+    .cart-widget {
+        margin: 0 25px 0 55px;
+    }
+}
+
+@media (min-width: 1440px){
+    .cart-widget {
+        margin-right: 55px;
+    }
+}
