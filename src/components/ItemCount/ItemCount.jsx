@@ -18,7 +18,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
         <button
           className="button-container"
           onClick={() => addProducts(-1)}
-          disabled={count <= 1 ? true : null}
+          disabled={count <= initial ? true : null}
         >
           -
         </button>

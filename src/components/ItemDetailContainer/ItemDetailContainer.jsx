@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { products } from "../../data/data"
 import Loader from "../Loader/Loader";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 const findItem = (id) => {
   return new Promise ((resolve) =>{
     setTimeout(() => {
-        const itemDet = id ? products.find(item => item.id === id) : products
+        const itemDet = id ? products.find(product => product.id === id) : products
         resolve (itemDet)
     },2000);
   });
@@ -17,9 +18,10 @@ function ItemDetailContainer({}) {
 
   const [product, setProduct] = useState([]);
   const[loading, setLoading] = useState([true]);
+  const {id} = useParams()
 
   useEffect(() =>{
-    findItem("4")
+    findItem(id)
     .then((resp) =>{setProduct(resp)})
     .catch((err) =>{console.log(err)})
     .finally(() => setLoading(false))
@@ -29,7 +31,7 @@ function ItemDetailContainer({}) {
   return (
     <>
     {loading ? <Loader/>
-    : (<ItemDetail id={product.id} name={product.name} description={product.description} price={product.price} img={product.pictureUrl} stock={product.stock}/>)}
+    : (<ItemDetail product={product}/>)}
     </>
   )
 }

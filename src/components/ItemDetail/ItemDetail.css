@@ -6,6 +6,7 @@
 .detail {
     width: 250px;
     height: 450px;
+    margin: 30px;
     padding: 1em 2em;
     border: 2px solid grey;
     font-size: 1.2rem;

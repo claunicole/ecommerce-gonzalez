@@ -20,19 +20,16 @@
 
 .nav-container li {
     padding: 15px;
-}
-
-.nav-container li a {
-    text-decoration: none;
     color: white;
 }
+
 
 @media (min-width: 650px) {
 
 .nav-container {
     right: 25px;
 }     
-.nav-container li a {
+.nav-container li {
     font-size: 1.4rem;
 }}
 

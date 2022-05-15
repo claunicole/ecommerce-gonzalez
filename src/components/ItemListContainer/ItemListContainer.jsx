@@ -1,4 +1,3 @@
-import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";

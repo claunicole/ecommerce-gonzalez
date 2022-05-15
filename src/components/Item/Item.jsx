@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 import "./Item.css"
 
 
-function Item({name, description, price, img, stock}) {
+function Item({product}) {
   return (
     <div className="card-container"> 
         <div className="card" >
-          <img className="card-image" src={img} alt=""></img>  
-          <div>{name}</div>
-          <div>{price}</div>
-          <ItemCount stock={stock} initial={1} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
+    <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
+          <img className="card-image" src={product.pictureUrl} alt=""></img>  
+          <div>{product.name}</div>
+    </Link>
+          <div>{product.price}</div>
+          <ItemCount stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
         </div>
     </div>
   )
