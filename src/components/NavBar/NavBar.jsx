@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom';
 function NavBar() {
     return (
         <header className="header">
-            <img src={logo} className='logo' alt="logo" />
+            <Link to ="/ecommerce-gonzalez"><img src={logo} className='logo' alt="logo" /></Link>
             <nav>
                 <ul className='nav-container'>
                     <Link to ="/ecommerce-gonzalez"><li>Inicio</li></Link>
                     <li>Ofertas</li>
-                    <li>Contacto</li>
                 </ul>
             </nav>
             <CartWidget/>

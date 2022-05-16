@@ -15,5 +15,5 @@ export const products = [
     { id: "5", name: "Polera Star Wars", description: "Polera Unisex Funko", price: "$14", pictureUrl:img5, stock:3, initial: 1},
     { id: "6", name: "Polera Doctor Strange", description: "Polera Unisex Funko", price: "$14", pictureUrl:img6, stock:3, initial: 1},
     { id: "7", name: "Polera Villanos Star Wars", description: "Polera Unisex Funko", price: "$14", pictureUrl:img7, stock:3, initial: 1},
-    { id: "8", name: "Polera Kylo Ren", description: "Polera Unisex Funko", price: "$14", pictureUrl:img8, stock:3, initial: 20 }
+    { id: "8", name: "Polera Kylo Ren", description: "Polera Unisex Funko", price: "$14", pictureUrl:img8, stock:3, initial: 1 }
   ];

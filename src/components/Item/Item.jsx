@@ -5,16 +5,15 @@ import "./Item.css"
 
 function Item({product}) {
   return (
-    <div className="card-container"> 
-        <div className="card" >
+   <div className="card" >
     <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
-          <img className="card-image" src={product.pictureUrl} alt=""></img>  
+          <img className="card-image" src={product.pictureUrl} alt="Imagen del producto"></img>  
           <div>{product.name}</div>
     </Link>
           <div>{product.price}</div>
           <ItemCount stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
-        </div>
     </div>
+    
   )
 }
 
