@@ -7,7 +7,8 @@ function ItemDetail({product}) {
           <div className="detail">
             <img src={product.pictureUrl} alt="" className="detail-img"/>
             <div className="detail-item">
-                <p>{product.name}</p>
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
                 <p>{product.price}</p>
                 <ItemCount stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
             </div>
