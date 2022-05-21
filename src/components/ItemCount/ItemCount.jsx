@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-export default function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, onAdd, handleInput}) {
   const [count, setCount] = useState(initial);
 
   const addProducts = (number) => {
@@ -10,6 +10,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
 
   function addToCart() {
     onAdd(count);
+    handleInput();
   }
 
   return (

@@ -1,7 +1,7 @@
 
 .card {
     width: 180px;
-    height: 270px;
+    height: 200px;
     margin: 10px;
     padding: 1em 2em;
     border: 2px solid grey;
@@ -19,7 +19,7 @@
  @media (min-width: 1024px) {
 .card {
      width: 250px;
-    height: 420px;
+    height: 320px;
 }
 
 .card-image {

@@ -9,8 +9,8 @@ function NavBar() {
             <Link to ="/ecommerce-gonzalez"><img src={logo} className='logo' alt="logo" /></Link>
             <nav>
                 <ul className='nav-container'>
-                    <Link to ="/ecommerce-gonzalez"><li>Inicio</li></Link>
-                    <li>Ofertas</li>
+                    <Link to ="ecommerce-gonzalez/categoria/Poleras"><li>Poleras</li></Link>
+                    <Link to ="ecommerce-gonzalez/categoria/Figuras"><li>Figuras</li></Link> 
                 </ul>
             </nav>
             <CartWidget/>

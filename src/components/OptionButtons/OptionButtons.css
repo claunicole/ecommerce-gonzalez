@@ -1,0 +1,20 @@
+.option-button-cart, 
+.option-button-list   {
+    width: 180px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.option-button-cart{
+    color: #fff;;
+    background-color: #d3145a
+}
+
+.option-button-list {
+    border: 2px solid #d3145a;     
+}

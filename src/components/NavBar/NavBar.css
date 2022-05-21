@@ -35,9 +35,9 @@
 
 @media (min-width: 1024px) {
 .nav-container {
-    left: 300px;
+    left: 200px;
 }  
 
 .nav-container li {
-    padding: 30px;
+    padding: 50px;
 }}

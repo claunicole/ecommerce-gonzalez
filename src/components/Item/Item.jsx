@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import ItemCount from "../ItemCount/ItemCount"
 import "./Item.css"
 
 
@@ -11,7 +10,6 @@ function Item({product}) {
           <div>{product.name}</div>
     </Link>
           <div>{product.price}</div>
-          <ItemCount stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
     </div>
     
   )
