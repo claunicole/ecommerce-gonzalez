@@ -5,7 +5,7 @@ import './ItemList.css'
 function ItemList({products}) {
   return (
     <div className="item-list">
-        {products.map(product => <Item id={product.id} product={product}/>)}
+        {products.map(product => <Item key={product.id} product={product}/>)}
     </div>
   )
 }
