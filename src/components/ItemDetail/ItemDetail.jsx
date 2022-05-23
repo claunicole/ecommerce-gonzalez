@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useCartContext } from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
 import OptionButtons from "../OptionButtons/OptionButtons"
 import './ItemDetail.css'
@@ -8,6 +9,12 @@ function ItemDetail({product}) {
 
   const handleInput = () => {
       setInputType('input')
+  }
+  const {addToCart} = useCartContext()
+
+  const onAdd = (count) =>{
+    console.log(`Has agregado ${count} producto/s a tu carrito`)
+    addToCart({...product, count})
   }
 
   return (
@@ -21,7 +28,7 @@ function ItemDetail({product}) {
                 
                 {
                   inputType === 'button' 
-                  ? <ItemCount stock={product.stock} initial={product.initial} onAdd={(count)=> console.log(`Has agregado ${count} producto/s a tu carrito`) } handleInput={handleInput}/>
+                  ? <ItemCount stock={product.stock} initial={product.initial} onAdd={onAdd} handleInput={handleInput}/>
                   : <OptionButtons/>
                 }
             </div>
