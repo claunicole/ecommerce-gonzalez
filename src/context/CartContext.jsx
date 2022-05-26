@@ -8,7 +8,7 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
 
-    function addToCart(item,){
+    function addToCart(item){
         if(cartList.some(article => article.id === item.id)){
            const newCart = cartList.map(article => {
                if(article.id === item.id) {
