@@ -24,7 +24,7 @@ function ItemDetail({product}) {
             <div className="detail-item">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <p>{product.price}</p>
+                <p>${product.price}</p>
                 
                 {
                   inputType === 'button' 

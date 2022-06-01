@@ -8,8 +8,12 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
 
+    function isInCart (id) {
+        return cartList.some(article => article.id === id)
+    }
+
     function addToCart(item){
-        if(cartList.some(article => article.id === item.id)){
+        if(isInCart(item.id)){
            const newCart = cartList.map(article => {
                if(article.id === item.id) {
                    article.count = item.count + article.count;
@@ -35,6 +39,14 @@ const CartContextProvider = ({children}) => {
         setCartList([...newCart])
     }
 
+    const totalCount = () => {
+        return cartList.reduce((qty, product) => qty += product.count ,0)
+    }
+
+    const totalPrice = () => {
+        return cartList.reduce((price, product) => price + (product.count * product.price) ,0)
+    }
+
     const deleteCart = () => {
         setCartList([])
     }
@@ -43,8 +55,10 @@ const CartContextProvider = ({children}) => {
         <CartContext.Provider value = { {
             cartList,
             addToCart,
+            deleteCart,
             deleteItem,
-            deleteCart
+            totalCount,
+            totalPrice
         } }>
             {children}
         </CartContext.Provider>
