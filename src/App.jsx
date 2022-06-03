@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path ="/ecommerce-gonzalez" element = {<ItemListContainer greeting ={'Hola soy el ItemListContainer'}/>}/>
           <Route path ="/ecommerce-gonzalez/categoria/:id" element = {<ItemListContainer greeting ={'Hola soy el ItemListContainer'}/>}/>
-          <Route path ="/ecommerce-gonzalez/detail/:detalleId" element ={<ItemDetailContainer/>}/>
+          <Route path ="/ecommerce-gonzalez/detail/:id" element ={<ItemDetailContainer/>}/>
           <Route path ="/ecommerce-gonzalez/cart" element ={<Cart/>}/>
           <Route path ="/ecommerce-gonzalez/*" element ={<Navigate to ="/ecommerce-gonzalez" replace/>}/>
         </Routes>

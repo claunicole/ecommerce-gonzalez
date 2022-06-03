@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {getFirestore, doc, getDoc} from "firebase/firestore"
 import { products } from "../../data/data"
 import Loader from "../Loader/Loader";
 import ItemDetail from "../ItemDetail/ItemDetail";
@@ -18,16 +19,17 @@ function ItemDetailContainer({}) {
 
   const [product, setProduct] = useState([]);
   const[loading, setLoading] = useState([true]);
-  const {detalleId} = useParams()
+  const {id} = useParams()
 
-  useEffect(() =>{
-    findItem(detalleId)
-    .then((resp) =>{setProduct(resp)})
+  useEffect(() => {
+    const db = getFirestore()
+    const dbQuery = doc(db, "products", id)
+    getDoc(dbQuery)
+    .then(resp => setProduct({ id: resp.id, ...resp.data()}))
     .catch((err) =>{console.log(err)})
     .finally(() => setLoading(false))
-  },[detalleId])
+  }, [id])
 
- 
   return (
     <>
     {loading ? <Loader/>
