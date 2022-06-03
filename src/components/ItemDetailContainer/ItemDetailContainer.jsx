@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
 import {getFirestore, doc, getDoc} from "firebase/firestore"
-import { products } from "../../data/data"
 import Loader from "../Loader/Loader";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-
-const findItem = (id) => {
-  return new Promise ((resolve) =>{
-    setTimeout(() => {
-        const itemDet = id ? products.find(product => product.id === id) : products
-        resolve (itemDet)
-    },2000);
-  });
-}
 
 
 function ItemDetailContainer({}) {

@@ -2,15 +2,8 @@ import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 import {getFirestore, getDocs, collection, query, where} from "firebase/firestore"
-import { products } from "../../data/data";
 import { useParams } from "react-router-dom";
 
-
-  const items = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 2000);
-  });
 
  function ItemListContainer({ greeting }) {
 
@@ -37,7 +30,7 @@ import { useParams } from "react-router-dom";
      }   
    },[id])
  
-    console.log(products)
+
     return (
         <>
             <h1>{greeting}</h1>
