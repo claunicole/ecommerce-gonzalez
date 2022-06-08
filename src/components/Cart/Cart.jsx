@@ -3,11 +3,36 @@ import "./Cart.css"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 
 function Cart() {
 
   const {cartList, deleteCart, deleteItem, totalPrice} = useCartContext()
+
+  function generateOrder() {
+    let order = {}
+
+    order.buyer = { name: "Claudia", email: "mail@mail.com", phone: "123456789" }
+    order.total = totalPrice()
+
+    order.products = cartList.map(cartItem => {
+      const id = cartItem.id
+      const name = cartItem.name
+      const quantity = cartItem.count
+      const price = cartItem.price * cartItem.count
+
+      return { id, name, quantity, price }
+    })
+   
+    const db = getFirestore()
+    const queryCollection = collection(db, "orders")
+
+    addDoc(queryCollection, order)
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err))
+    .finally(() => deleteCart())
+  }
 
   return (
     <div className="cart-container">
@@ -26,7 +51,7 @@ function Cart() {
           {cartList.length ? <>
                                <p>Precio final: ${totalPrice()} </p>
                                <button className="delete-button" onClick={deleteCart}>Vaciar Carrito</button> 
-                               <button className="end-button">Terminar compra</button>
+                               <button className="end-button" onClick={generateOrder}>Terminar compra</button>
                               </>
                            : <><h2>No hay productos en tu carrito</h2> 
                                 <Link to ="/ecommerce-gonzalez"><p>Volver al inicio</p></Link>
