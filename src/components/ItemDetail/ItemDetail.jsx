@@ -10,12 +10,27 @@ function ItemDetail({product}) {
   const handleInput = () => {
       setInputType('input')
   }
-  const {addToCart} = useCartContext()
+  const {addToCart, cartList} = useCartContext()
 
   const onAdd = (count) =>{
-    console.log(`Has agregado ${count} producto/s a tu carrito`)
-    addToCart({...product, count})
-  }
+    function checkItem() {
+      const check = cartList.filter(sameItem => sameItem.id === product.id)
+      if(check.length === 0){
+        return undefined        
+      }
+
+      if(cartList.length !=0){
+        return check[0].count} 
+    }
+    const checkStock = checkItem()
+    if(checkStock=== undefined || (checkStock + count) <= product.stock){
+      console.log(`Has agregado ${count} producto/s a tu carrito`)
+      addToCart({...product, count})
+    }
+    else{
+      alert(`No puedes agregar mas de ${product.stock} producto/s de este articulo`)
+    
+  }}
 
   return (
         <div className="detail-container">

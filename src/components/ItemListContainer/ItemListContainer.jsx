@@ -33,7 +33,6 @@ import { useParams } from "react-router-dom";
 
     return (
         <>
-            <h1>{greeting}</h1>
             {loading ? <Loader/>
             : (<ItemList products={products}/>)}
         </>

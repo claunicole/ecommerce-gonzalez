@@ -3,14 +3,14 @@ import "./Cart.css"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
 
 
 function Cart() {
 
   const {cartList, deleteCart, deleteItem, totalPrice} = useCartContext()
 
-  function generateOrder() {
+  async function generateOrder() {
     let order = {}
 
     order.buyer = { name: "Claudia", email: "mail@mail.com", phone: "123456789" }
@@ -32,6 +32,21 @@ function Cart() {
     .then(resp => console.log(resp))
     .catch(err => console.log(err))
     .finally(() => deleteCart())
+
+    const queryCollectionStock = collection(db, "products")
+    const queryUpdateStock = query (
+      queryCollectionStock,
+      where( documentId(), "in", cartList.map(it => it.id) ))
+
+    const batch = writeBatch(db)
+
+    await getDocs(queryUpdateStock)
+    .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+          stock: res.data().stock - cartList.find(product => product.id === res.id).count
+    })))
+    .finally(()=> console.log("uppdated"))
+
+    batch.commit()
   }
 
   return (
