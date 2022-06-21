@@ -1,10 +1,13 @@
 import CartList from "../CartList/CartList";
+import "./Cart.css";
 
 
 function Cart() {
 
   return (
-    <CartList/>
+    <div className="cart-container">
+      <CartList/>
+    </div>
   )
 }
 

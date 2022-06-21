@@ -5,11 +5,11 @@ import "./Item.css"
 function Item({product}) {
   return (
    <div className="card" >
-    <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
+    <Link to ={`/detail/${product.id}`}>
           <img className="card-image" src={product.pictureUrl} alt="Imagen del producto"></img>  
           <div>{product.name}</div>
     </Link>
-          <div>${product.price}</div>
+          <div>Precio: ${product.price}</div>
     </div>
     
   )

@@ -28,6 +28,7 @@
     display: flex;
     align-items: center;
     justify-items: center;
+    
 }
 
 
@@ -47,4 +48,9 @@
 
 .nav-container li {
     padding: 50px;
-}}
+}
+.total-count{
+    position: relative;
+    left: 50px;
+}
+}

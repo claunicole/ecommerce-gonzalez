@@ -1,7 +1,9 @@
 import { useState } from "react"
+
 import { useCartContext } from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
 import OptionButtons from "../OptionButtons/OptionButtons"
+
 import './ItemDetail.css'
 
 function ItemDetail({product}) {
@@ -39,7 +41,7 @@ function ItemDetail({product}) {
             <div className="detail-item">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <p>${product.price}</p>
+                <p>Precio: ${product.price}</p>
                 
                 {
                   inputType === 'button' 

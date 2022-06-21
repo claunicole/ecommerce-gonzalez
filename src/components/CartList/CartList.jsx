@@ -1,12 +1,17 @@
-import { useCartContext } from "../../context/CartContext";
-import "./CartList.css"
+import { Link } from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+
+import { useCartContext } from "../../context/CartContext";
+import Form from "../Form/Form";
+
+
+import "./CartList.css"
 
 function CartList() {
 
-    const {cartList, deleteCart, deleteItem, totalPrice, generateOrder} = useCartContext()
+    const {cartList, deleteCart, deleteItem, totalPrice} = useCartContext()
+    
 
   return (
     <>
@@ -15,7 +20,7 @@ function CartList() {
                 <h2>Tu carro de compras</h2>
                     {cartList.map(product => 
                 <li>
-                    <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
+                    <Link to ={`/detail/${product.id}`}>
                     <img className="img-cart" src={product.pictureUrl}></img>
                     </Link>
                     <p>{product.name}</p>
@@ -26,34 +31,11 @@ function CartList() {
                     {cartList.length ? <>
                                         <p>Precio final: ${totalPrice()} </p>
                                         <button className="delete-button" onClick={deleteCart}>Vaciar Carrito</button> 
-                                        <div>
-                                            <h2>Formulario</h2>
-                                            <div>
-                                                <label>Nombre: </label>
-                                                <input name='name' type="text" placeholder='Juan'></input>
-                                            </div>
-                                            <div>
-                                                <label>Apellido: </label>
-                                                <input name='last-name' type="text" placeholder='Perez'></input>
-                                            </div>
-                                            <div>
-                                                <label>Telefono: </label>
-                                                <input name='phone' type="number" placeholder='12345678'></input>
-                                            </div>
-                                            <div>
-                                                <label>Email: </label>
-                                                <input name='mail' type="email" placeholder='mail@mail.com'></input>
-                                            </div>
-                                            <div>
-                                                <label>Re-ingresa tu Email: </label>
-                                                <input name='mail-verification' type="email" placeholder='mail@mail.com'></input>
-                                            </div>
-                                    </div>
-                                        <button className="end-button" onClick={generateOrder}>Terminar compra</button>
+                                        <Form/>
                                       </>
                                     : <>
                                         <h2>No hay productos en tu carrito</h2> 
-                                        <Link to ="/ecommerce-gonzalez"><p>Volver al inicio</p></Link>
+                                        <Link to ="/"><p>Volver al inicio</p></Link>
                                       </>}
             </div>
         </div>

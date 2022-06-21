@@ -1,0 +1,43 @@
+.footer_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    margin-top: 15px;
+    color: white;
+    background-color: #282c34;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+ 
+.social-media li {
+    margin: auto;
+}
+
+.social-media img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+.footer_container p {
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+
+    .footer_container {
+        align-items: center;
+        align-self: center;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+}
