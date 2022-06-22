@@ -1,14 +1,9 @@
-.cart-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;   
-}
-
 .cart {
     min-width: 300px;
-    min-height: 100px;
+    min-height: 50px;
     
 }
+
 
 .cart li {
     display: flex;
@@ -37,29 +32,10 @@
     background-color: white;
 }
 
-.delete-button {
-    width: 150px;
-    height: 50px;
-    margin: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    color: #fff;;
-    background-color: #d3145a
-}
+.link {
+    text-decoration: none;
+    font-size: 1.2rem;
 
-.end-button {
-    width: 250px;
-    height: 50px;
-    margin: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: white;
-    border: 2px solid #d3145a;     
 }
 
 
@@ -67,7 +43,7 @@
 
     .cart {
         min-width: 500px;
-        min-height: 200px;
+        min-height: 50px;
         
     } 
 }

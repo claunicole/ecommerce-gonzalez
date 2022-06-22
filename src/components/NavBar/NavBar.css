@@ -27,8 +27,11 @@
 .cart-widget-container {
     display: flex;
     align-items: center;
-    justify-items: center;
-    
+    justify-items: center; 
+}
+
+.link {
+    text-decoration: none;
 }
 
 

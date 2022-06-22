@@ -17,6 +17,11 @@
     height: 130px;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
  @media (min-width: 1024px) {
 .card {
      width: 250px;
