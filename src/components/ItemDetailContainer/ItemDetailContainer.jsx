@@ -8,7 +8,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css";
 
 
-function ItemDetailContainer({}) {
+function ItemDetailContainer() {
 
   const [product, setProduct] = useState([]);
   const[loading, setLoading] = useState([true]);
@@ -25,10 +25,10 @@ function ItemDetailContainer({}) {
 
   return (
     <div className="item-detail-container">
-    {loading ? <Loader/>
-    : (<ItemDetail product={product}/>)}
+      {loading ? <Loader/>
+               : (<ItemDetail product={product}/>)}
     </div>
   )
-}
+}   
 
 export default ItemDetailContainer

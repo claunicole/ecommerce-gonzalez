@@ -12,25 +12,25 @@ import "./ItemListContainer.css"
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const {id} = useParams()
+    const {category} = useParams()
 
    useEffect(()=>{
      const db = getFirestore()
         
         const queryCollection = collection(db, "products")
-        const queryCollectionFilter = id ? query(queryCollection, where("category","==", id)) : queryCollection
+        const queryCollectionFilter = category ? query(queryCollection, where("category","==", category)) : queryCollection
 
         getDocs(queryCollectionFilter)
         .then(resp => setProducts(resp.docs.map(product => ({id: product.id, ...product.data()}))))
         .catch((err) =>{console.log(err)})
         .finally(() => setLoading(false))   
-   },[id])
+   },[category])
  
 
     return (
         <div className="item-list-container">
             {loading ? <Loader/>
-            : (<ItemList products={products}/>)}
+                     : (<ItemList products={products}/>)}
         </div>
     )
 }

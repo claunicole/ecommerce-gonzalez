@@ -16,8 +16,8 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path ="/" element = {<ItemListContainer greeting ={'Hola soy el ItemListContainer'}/>}/>
-          <Route path ="/categoria/:id" element = {<ItemListContainer greeting ={'Hola soy el ItemListContainer'}/>}/>
+          <Route path ="/" element = {<ItemListContainer/>}/>
+          <Route path ="/categoria/:category" element = {<ItemListContainer/>}/>
           <Route path ="/detail/:id" element ={<ItemDetailContainer/>}/>
           <Route path ="/cart" element ={<Cart/>}/>
           <Route path ="/*" element ={<Navigate to ="/" replace/>}/>

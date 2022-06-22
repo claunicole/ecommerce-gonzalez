@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
 import swal from 'sweetalert'
+
+import { useCartContext } from "../../context/CartContext"
 
 import "./Form.css"
 
@@ -19,12 +20,12 @@ function Form() {
             order.total = totalPrice()
         
             order.products = cartList.map(cartItem => {
-            const id = cartItem.id
-            const name = cartItem.name
-            const quantity = cartItem.count
-            const price = cartItem.price * cartItem.count
-        
-            return { id, name, quantity, price }
+                const id = cartItem.id
+                const name = cartItem.name
+                const quantity = cartItem.count
+                const price = cartItem.price * cartItem.count
+            
+                return { id, name, quantity, price }
             })
         
             const db = getFirestore()
@@ -40,8 +41,8 @@ function Form() {
         
             const queryCollectionStock = collection(db, "products")
             const queryUpdateStock = query (
-            queryCollectionStock,
-            where( documentId(), "in", cartList.map(it => it.id) ))
+                queryCollectionStock,
+                where( documentId(), "in", cartList.map(it => it.id) ))
         
             const batch = writeBatch(db)
         
@@ -67,15 +68,15 @@ function Form() {
     
   return (
     <div>
-            <h2>Formulario</h2>
-            <div className="form">
-                <input name='name' type="text" placeholder='Nombre' value={dataForm.name} onChange={handlerChange} ></input>
-                <input name='lastName' type="text" placeholder='Apellido' value={dataForm.lastName} onChange={handlerChange}></input>
-                <input name='phone' type="text" placeholder='Teléfono' value={dataForm.phone} onChange={handlerChange} ></input>
-                <input name='email' type="email" placeholder='Email' value={dataForm.email} onChange={handlerChange} ></input>
-                <input name='emailConfirm' type="email" placeholder='Re-ingresa tu email' value={dataForm.emailConfirm} onChange={handlerChange} ></input>
-            </div>
-            <button className="end-button" onClick={generateOrder}>Terminar compra</button>
+        <h2>Formulario</h2>
+        <div className="form">
+            <input name='name' type="text" placeholder='Nombre' value={dataForm.name} onChange={handlerChange}></input>
+            <input name='lastName' type="text" placeholder='Apellido' value={dataForm.lastName} onChange={handlerChange}></input>
+            <input name='phone' type="text" placeholder='Teléfono' value={dataForm.phone} onChange={handlerChange}></input>
+            <input name='email' type="email" placeholder='Email' value={dataForm.email} onChange={handlerChange}></input>
+             <input name='emailConfirm' type="email" placeholder='Re-ingresa tu email' value={dataForm.emailConfirm} onChange={handlerChange}></input>
+        </div>
+        <button className="end-button" onClick={generateOrder}>Terminar compra</button>
     </div>
   )
 }

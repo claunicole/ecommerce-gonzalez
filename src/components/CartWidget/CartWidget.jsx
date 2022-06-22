@@ -7,9 +7,9 @@ import './CartWidget.css';
 function CartWidget() {
   return (
     <div className='cart-widget'>
-        <Link to ="/cart">
-        <FontAwesomeIcon icon={faCartShopping} size="2x" color="white"></FontAwesomeIcon>
-        </Link>
+      <Link to ="/cart">
+       <FontAwesomeIcon icon={faCartShopping} size="2x" color="white"></FontAwesomeIcon>
+       </Link>
     </div>
   )
 }
